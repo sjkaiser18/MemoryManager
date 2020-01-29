@@ -10,6 +10,7 @@ using std::endl;
 
 void* operator new(size_t val) {
     cout << "Global new operator.  Allocating " << val << " bytes." << endl;
+    //return manage.store(val);
     return malloc(val);
 }
 
@@ -17,3 +18,14 @@ void operator delete(void* ptr) noexcept {
     cout << "Global delete operator. Deallocating..." << endl;
     free(ptr);
 }
+
+/*
+void* operator new[](size_t val){
+    cout<< "Global new array operator. Allocating" << val << "bytes."<<endl;
+    //return manage.store(val);
+}
+
+void operator delete[](void* ptr) noexcept{
+    cout << "Global delete operator. Deallocating..." << endl;
+    manage.remove(ptr);
+}*/

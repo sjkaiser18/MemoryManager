@@ -2,14 +2,16 @@
 #include "algoNew.h"
 #include "Point.h"
 #include "SpecialPoint.h"
+#include "CustomMemoryManager.h"
 using std::cout;
 using std::cin;
 using std::endl;
 
 
 int main() {
+
     cout << "Global new." << endl;
-    int* ptr01 = new int;
+    int* ptr01 = new int; //THIS NEW IS NOT WHAT YOU THINK IT IS!!
     delete ptr01;
 
     cout << endl << "Specialized new." << endl;
